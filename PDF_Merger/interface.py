@@ -1,25 +1,28 @@
 import customtkinter as ctk
 from tkinter import filedialog
 
-
+# Pre-configure the appearance mode and color theme
 ctk.set_appearance_mode("Dark")
 ctk.set_default_color_theme("blue")
 
 class App(ctk.CTk):
 
+  # Declare all the widgets and variables
   ui_button_plus = None
   ui_button_minus = None
   wres = ["1080p", "1440p", "4K", "Manual"]
   scaling = None
+  frame_content = None
   content = []
   scrollframe = None
   footer_destination = None
-  destination= None
   footer_name = None
 
+  # Initialize the main window
   def __init__(self):
     super().__init__()
     self.title("PDF Merger")
+    # set the window size based on the screen resolution
     if (self.winfo_screenwidth() < 1920) or (self.winfo_screenheight() < 1080):
       self.geometry("1820x980")
       ctk.set_widget_scaling(float(1))
@@ -35,54 +38,46 @@ class App(ctk.CTk):
       ctk.set_widget_scaling(float(2))
       self.scaling = 2
 
-    # configure grid layout (4x4)
+    # configure the grid
     self.grid_columnconfigure(1, weight=1)
     self.grid_rowconfigure(0, weight=1)
     
 
     # create sidebar frame with widgets
-    self.sidebar_frame = ctk.CTkFrame(self, width=140, corner_radius=0)
-    self.sidebar_frame.grid(row=0, column=0, rowspan=4, sticky="nsew")
-    self.sidebar_frame.grid_rowconfigure(1, weight=1)
-    self.logo_label = ctk.CTkLabel(self.sidebar_frame, text="PDF Merger", font=ctk.CTkFont(size=20, weight="bold"))
-    self.logo_label.grid(row=0, column=0, padx=20, pady=(20, 10))
+    sidebar_frame = ctk.CTkFrame(self, width=140, corner_radius=0)
+    sidebar_frame.grid(row=0, column=0, rowspan=4, sticky="nsew")
+    sidebar_frame.grid_rowconfigure(1, weight=1)
+    logo_label = ctk.CTkLabel(sidebar_frame, text="PDF Merger", font=ctk.CTkFont(size=20, weight="bold"))
+    logo_label.grid(row=0, column=0, padx=20, pady=(20, 10))
 
-    # self.color_theme = ctk.CTkLabel(self.sidebar_frame, text="Color Theme:", anchor="w")
-    # self.color_theme.grid(row=2, column=0, padx=20, pady=(10, 0))
-    # self.color_theme_optionemenu = ctk.CTkOptionMenu(self.sidebar_frame, values=["Blue", "Green", "Dark Blue"],
-    #                                                                    command=self.change_color_theme)
-    # self.color_theme_optionemenu.grid(row=3, column=0, padx=20, pady=(10, 10))
-
-    self.appearance_mode_label = ctk.CTkLabel(self.sidebar_frame, text="Appearance Mode:", anchor="w")
-    self.appearance_mode_label.grid(row=4, column=0, padx=20, pady=(10, 0))
-    self.appearance_mode_optionemenu = ctk.CTkOptionMenu(self.sidebar_frame, values=["System", "Light", "Dark"],
-                                                                       command=self.change_appearance_mode)
-    self.appearance_mode_optionemenu.grid(row=5, column=0, padx=20, pady=(10, 10))
-    self.scaling_label = ctk.CTkLabel(self.sidebar_frame, text="UI Scaling:", anchor="w")
-    self.scaling_label.grid(row=6, column=0, padx=20, pady=(10, 0))
-    self.scaling_optionemenu = ctk.CTkOptionMenu(self.sidebar_frame, values=self.wres,
+    appearance_mode_label = ctk.CTkLabel(sidebar_frame, text="Appearance Mode:", anchor="w")
+    appearance_mode_label.grid(row=4, column=0, padx=20, pady=(10, 0))
+    appearance_mode_optionemenu = ctk.CTkOptionMenu(sidebar_frame, values=["System", "Light", "Dark"],
+                                                    command=self.change_appearance_mode)
+    appearance_mode_optionemenu.grid(row=5, column=0, padx=20, pady=(10, 10))
+    scaling_label = ctk.CTkLabel(sidebar_frame, text="UI Scaling:", anchor="w")
+    scaling_label.grid(row=6, column=0, padx=20, pady=(10, 0))
+    scaling_optionemenu = ctk.CTkOptionMenu(sidebar_frame, values=self.wres,
                                                                command=self.change_scaling)
-    self.scaling_optionemenu.grid(row=7, column=0, padx=20, pady=(10, 20))
-    self.ui_button_frame = ctk.CTkFrame(self.sidebar_frame, fg_color="transparent")
-    self.ui_button_frame.grid(row=8, column=0)
-    self.ui_button_frame.grid_columnconfigure((0,1), weight=1)
-    self.ui_button_minus = ctk.CTkButton(self.ui_button_frame, state="disabled", text="-", command=lambda:self.modify_scaling(-1), width=70, corner_radius=0)
+    scaling_optionemenu.grid(row=7, column=0, padx=20, pady=(10, 20))
+    ui_button_frame = ctk.CTkFrame(sidebar_frame, fg_color="transparent")
+    ui_button_frame.grid(row=8, column=0)
+    ui_button_frame.grid_columnconfigure((0,1), weight=1)
+    self.ui_button_minus = ctk.CTkButton(ui_button_frame, state="disabled", text="-", command=lambda:self.modify_scaling(-1), width=70, corner_radius=0)
     self.ui_button_minus.grid(row=0, column=0, padx=(20,0), pady=10)
-    self.ui_button_plus = ctk.CTkButton(self.ui_button_frame, state="disabled", text="+", command=lambda:self.modify_scaling(1), width=70, corner_radius=0)
+    self.ui_button_plus = ctk.CTkButton(ui_button_frame, state="disabled", text="+", command=lambda:self.modify_scaling(1), width=70, corner_radius=0)
     self.ui_button_plus.grid(row=0, column=1, padx=(0,20), pady=10)
 
-    self.frame = ctk.CTkFrame(self, corner_radius=0, fg_color="transparent")
-    self.frame.grid(row=0, column=1, sticky="nsew")
-    self.frame.grid_columnconfigure(0, weight=1)
-    self.frame.grid_rowconfigure(0, weight=1)
-    self.frame_content = ctk.CTkFrame(self.frame, corner_radius=0, fg_color="transparent")
+    # create main frame with widgets
+    frame = ctk.CTkFrame(self, corner_radius=0, fg_color="transparent")
+    frame.grid(row=0, column=1, sticky="nsew")
+    frame.grid_columnconfigure(0, weight=1)
+    frame.grid_rowconfigure(0, weight=1)
+    self.frame_content = ctk.CTkFrame(frame, corner_radius=0, fg_color="transparent")
     self.frame_content.grid(row=0, column=0, sticky="nsew", padx=20, pady=20)
     
-    
-
-    self.credit = ctk.CTkLabel(self.frame, text="Made by @IPG2004", font=ctk.CTkFont(size=20, weight="bold"))
+    self.credit = ctk.CTkLabel(frame, text="Made by @IPG2004", font=ctk.CTkFont(size=20, weight="bold"))
     self.credit.grid(row=1, column=0, sticky="nsew", padx=0, pady=0, ipadx=20, ipady=20)
-
 
     self.frame_content.grid_columnconfigure(0, weight=1)
     self.frame_content.grid_rowconfigure(1, weight=1)
@@ -114,21 +109,11 @@ class App(ctk.CTk):
     footer_merge.grid(row=1, column=1, sticky="nsew", padx=10, pady=10)
 
 
-
-
-  # def change_color_theme(self, theme: str):
-  #   if theme == "Blue":
-  #     theme = "blue"
-  #   elif theme == "Green":
-  #     theme = "green"
-  #   elif theme == "Dark Blue":
-  #     theme = "dark-blue"
-  #   ctk.set_default_color_theme(theme)
-
-
+  # functions to change the appearance mode
   def change_appearance_mode(self, mode):
     ctk.set_appearance_mode(mode)
 
+  # functions to change the UI scaling
   def change_scaling(self, new_scaling: str):
     if new_scaling == "Manual":
       self.ui_button_minus.configure(state="enabled")
@@ -150,7 +135,7 @@ class App(ctk.CTk):
       ctk.set_widget_scaling(float(2))
       self.scaling = 2
       
-    
+  # funtion to modify manually the UI scaling  
   def modify_scaling(self, value: int):
     if (value > 0):
       self.scaling += 0.1
@@ -158,6 +143,7 @@ class App(ctk.CTk):
       self.scaling -= 0.1
     ctk.set_widget_scaling(self.scaling)
 
+  # function to remove a element of the scrollable frame
   def remove_scfr(self, index):
     self.content.pop(index)
     self.scrollframe.destroy()
@@ -166,6 +152,7 @@ class App(ctk.CTk):
     self.scrollframe.grid_columnconfigure(0, weight=1)
     self.build_scrollframe()
 
+  # function to clear the content of the scrollable frame
   def clear_scfr(self):
     self.content = []
     self.scrollframe.destroy()
@@ -174,9 +161,9 @@ class App(ctk.CTk):
     self.scrollframe.grid_columnconfigure(0, weight=1)
     self.footer_destination.configure(text="Destination folder", fg_color="transparent")
     self.footer_name.delete(0, "end")
-    self.footer_name.configure(placeholder_text="Filename", fg_color=("#F9F9FA", "#343638"))
+    self.footer_name.configure(fg_color=("#F9F9FA", "#343638"))
     
-
+  # function to build the scrollable frame
   def build_scrollframe(self):
     i = 1
     for files in self.content:
@@ -187,20 +174,8 @@ class App(ctk.CTk):
       ctk.CTkButton(new_frame, text="Remove", command=lambda e=i:self.remove_scfr(e-1)).grid(row=0, column=2, sticky="nsew", padx=10, pady=10)
       new_frame.grid(row=i-1, column=0, sticky="nsew", padx=10, pady=10)
       i += 1
-      
-  
-  def add_content(self):
-    for i in range(20):
-      new_frame = ctk.CTkFrame(self.scrollframe, corner_radius=20)
-      new_frame.grid_columnconfigure(1, weight=1)
-      ctk.CTkLabel(new_frame, text=f"{i+1}").grid(row=0, column=0, sticky="nsew", padx=10, pady=10)
-      ctk.CTkLabel(new_frame, text=f"Filepath/filename{i+1}.pdf").grid(row=0, column=1, sticky="nsew", padx=10, pady=10)
-      ctk.CTkButton(new_frame, text="Remove", command=lambda e=i:self.remove_scfr(e)).grid(row=0, column=2, sticky="nsew", padx=10, pady=10)
-      new_frame.grid(row=i, column=0, sticky="nsew", padx=10, pady=10)
-      self.content.append(f"Filepath/filename{i}.pdf")
     
-
-
+  # function to insert a file
   def select_file(self):
     file = filedialog.askopenfilename(title="Select a file", filetypes=[("PDF files", "*.pdf")])
     if file:
@@ -208,13 +183,13 @@ class App(ctk.CTk):
       self.scrollframe.configure(fg_color="transparent")
       self.build_scrollframe()
 
-
+  # function to select a destination folder
   def select_destination_folder(self):
     folder = filedialog.askdirectory(title="Select a folder")
     if folder:
       self.footer_destination.configure(text=folder, fg_color="transparent")
 
-  
+  # function to merge the files
   def merge(self):
     error = False
     if self.content == []:
@@ -228,6 +203,7 @@ class App(ctk.CTk):
       error = True
     if error:
       return
+    self.footer_name.configure(fg_color=("#F9F9FA", "#343638"))
     if self.footer_name.get()[-4:] != ".pdf":
       self.footer_name.insert("end", ".pdf")
     try:
@@ -248,3 +224,7 @@ class App(ctk.CTk):
       close_button.grid(row=1, column=0, sticky="nsew", padx=10, pady=10)
       return
     
+# Run the application
+if __name__ == "__main__":
+  app = App()
+  app.mainloop()
