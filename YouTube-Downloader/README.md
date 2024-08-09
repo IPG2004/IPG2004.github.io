@@ -59,7 +59,13 @@ YouTube-Downloader/
 │       └── red.json
 └── tests/
     └── test_app.py
+
 ```
+- src/: Contains the main application code.
+    - app.py: Main GUI application.
+    - resources/: Contains additional resources if needed.
+- tests/: Contains test files.
+    - test_app.py: Test cases for the application.
 
 ## License
 
