@@ -14,7 +14,7 @@ YouTube Downloader is a graphical user interface (GUI) application that allows u
 
 1. Clone this repository:
     ```sh
-    git clone https://github.com/yourusername/YouTube-Downloader.git
+    git clone https://github.com/IPG2004/YouTube-Downloader.git
     cd YouTube-Downloader
     ```
 
@@ -54,12 +54,17 @@ YouTube-Downloader/
 ├── setup.py
 ├── .gitignore
 ├── src/
-│   ├── __init__.py
 │   ├── app.py
 │   └── resources/
-│       ├── __init__.py
 │       └── red.json
 └── tests/
-    ├── __init__.py
     └── test_app.py
+```
 
+## License
+
+This project is licensed by the license MIT - see the file [LICENSE](LICENSE) for more details.
+
+## Credits
+
+Made by [@IPG2004](https://github.com/IPG2004)
