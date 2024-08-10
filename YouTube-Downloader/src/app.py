@@ -2,10 +2,15 @@ import customtkinter as ctk
 from tkinter import filedialog
 from pytubefix import YouTube as yt
 import datetime
+import os
+
+# Get the absolute path of the current file
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+THEME_PATH = os.path.join(BASE_DIR, "resources", "red.json")
 
 # Set appearance mode to dark and load custom color theme
 ctk.set_appearance_mode("Dark")
-ctk.set_default_color_theme("./resources/red.json")
+ctk.set_default_color_theme(THEME_PATH)
 
 class App(ctk.CTk):
 

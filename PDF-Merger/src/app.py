@@ -207,7 +207,7 @@ class App(ctk.CTk):
     if self.footer_name.get()[-4:] != ".pdf":
       self.footer_name.insert("end", ".pdf")
     try:
-      from PyPDF2 import PdfMerger
+      from pypdf import PdfMerger
       merger = PdfMerger()
       for file in self.content:
         merger.append(file)

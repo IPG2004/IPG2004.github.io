@@ -54,22 +54,25 @@ YouTube-Downloader/
 ├── setup.py
 ├── .gitignore
 ├── src/
+    ├── __init__.py
 │   ├── app.py
 │   └── resources/
+        ├── __init__.py
 │       └── red.json
 └── tests/
+    ├── __init__.py
     └── test_app.py
 
 ```
-- src/: Contains the main application code.
-    - app.py: Main GUI application.
-    - resources/: Contains additional resources if needed.
-- tests/: Contains test files.
-    - test_app.py: Test cases for the application.
+- `src/`: Contains the main application code.
+    - `app.py`: Main GUI application.
+    - `resources/`: Contains additional resources if needed.
+- `tests/`: Contains test files.
+    - `test_app.py`: Test cases for the application.
 
 ## License
 
-This project is licensed by the license MIT - see the file [LICENSE](LICENSE) for more details.
+This project is licensed under the MIT license - see the [LICENSE](LICENSE) for more details.
 
 ## Credits
 

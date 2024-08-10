@@ -1,5 +1,5 @@
 import customtkinter as ctk
-from authentication import Authentication
+from src.authentication import Authentication
 
 # Pre-configure the appearance mode and color theme
 ctk.set_appearance_mode("Dark")

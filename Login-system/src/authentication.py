@@ -1,7 +1,7 @@
 import os
 import json
 import bcrypt
-from face_recognition import capture_face, recognize_face
+from src.face_recognition import capture_face, recognize_face
 
 class Authentication:
     def __init__(self):
