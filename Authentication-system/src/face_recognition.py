@@ -39,9 +39,9 @@ def capture_face(username):
                 gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
                 gray_face = gray[y:y+h, x:x+w]
                 gray_face = cv2.resize(gray_face, (150, 150))
-            if count % 20 == 0: 
-                img_name = f"data/{username}/image_{count//20}.jpg"
-                cv2.imwrite(img_name, gray_face)
+                if count % 20 == 0: 
+                    img_name = f"data/{username}/image_{count//20}.jpg"
+                    cv2.imwrite(img_name, gray_face)
             
             count += 1
 
@@ -53,6 +53,11 @@ def capture_face(username):
 # It receives the username as a parameter.
 # It returns True if the face was recognized successfully, False otherwise.
 def recognize_face(username):
+        # Check if the user folder exists
+        if not os.path.exists(f"data/{username}"):
+            print(f"User {username} not authenticated")
+            return False
+
         # Open the camera
         cap = cv2.VideoCapture(0)
         face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')

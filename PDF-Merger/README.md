@@ -14,13 +14,13 @@ PDF Merger is a graphical user interface (GUI) application that allows users to 
 
 1. Clone this repository:
     ```sh
-    git clone https://github.com/yourusername/PDF-Merger.git
+    git clone https://github.com/IPG2004/PDF-Merger.git
     cd PDF-Merger
     ```
 
 2. Create a virtual environment and activate it:
     ```sh
-    python -m venv venv
+    python3 -m venv venv
     source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
     ```
 
@@ -38,7 +38,7 @@ PDF Merger is a graphical user interface (GUI) application that allows users to 
 
 1. Run the application:
     ```sh
-    python src/app.py
+    python3 src/app.py
     ```
 
 2. Click the "Search" button to add PDF files to the list.

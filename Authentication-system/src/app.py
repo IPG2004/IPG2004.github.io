@@ -43,7 +43,7 @@ class App(ctk.CTk):
     self.sidebar_frame = ctk.CTkFrame(self, width=140, corner_radius=0)
     self.sidebar_frame.grid(row=0, column=0, rowspan=4, sticky="nsew")
     self.sidebar_frame.grid_rowconfigure(1, weight=1)
-    self.logo_label = ctk.CTkLabel(self.sidebar_frame, text="Login\nSystem", font=ctk.CTkFont(size=20, weight="bold"))
+    self.logo_label = ctk.CTkLabel(self.sidebar_frame, text="Authentication\nSystem", font=ctk.CTkFont(size=20, weight="bold"))
     self.logo_label.grid(row=0, column=0, padx=20, pady=(20, 10))
 
     self.appearance_mode_label = ctk.CTkLabel(self.sidebar_frame, text="Appearance Mode:", anchor="w")

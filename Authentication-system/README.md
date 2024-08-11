@@ -19,13 +19,18 @@ This project is an authentication system that uses facial recognition and passwo
 
 2. Create a virtual environment and activate it:
     ```sh
-    python -m venv venv
+    python3 -m venv venv
     source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
     ```
 
 3. Install the required packages:
     ```sh
     pip install -r requirements.txt
+    ```
+
+4. (Optional) Install the package using `setup.py`:
+    ```sh
+    pip install .
     ```
 
 ## Usage
@@ -44,6 +49,7 @@ Authentication-System/
 ├── LICENSE
 ├── README.md
 ├── requirements.txt
+├── setup.py
 ├── .gitignore
 ├── src/
 │   ├── __init__.py
