@@ -1,21 +1,20 @@
-# PDF Merger
+# Authentication System
 
-PDF Merger is a graphical user interface (GUI) application that allows users to merge multiple PDF files into a single document.
+This project is an authentication system that uses facial recognition and password authentication to allow users to register and log in. It is built using the `customtkinter` library for the user interface and `OpenCV` for face capture and recognition.
 
 ## Features
 
-- Add multiple PDF files to merge.
-- Select the destination folder and set a custom filename for the merged PDF.
-- Clear the list of selected files.
-- Dynamic UI scaling based on screen resolution.
-- Dark mode support with a custom color theme.
+- User registration with username and password.
+- Capture user faces during registration.
+- Login with username, password, and facial recognition.
+- User interface adaptable to different screen resolutions.
 
 ## Installation
 
 1. Clone this repository:
     ```sh
-    git clone https://github.com/yourusername/PDF-Merger.git
-    cd PDF-Merger
+    git clone https://github.com/IPG2004/Authentication-System.git
+    cd Authentication-System
     ```
 
 2. Create a virtual environment and activate it:
@@ -29,11 +28,6 @@ PDF Merger is a graphical user interface (GUI) application that allows users to 
     pip install -r requirements.txt
     ```
 
-4. (Optional) Install the package using `setup.py`:
-    ```sh
-    pip install .
-    ```
-
 ## Usage
 
 1. Run the application:
@@ -41,34 +35,40 @@ PDF Merger is a graphical user interface (GUI) application that allows users to 
     python src/app.py
     ```
 
-2. Click the "Search" button to add PDF files to the list.
-
-3. Select the destination folder by clicking the "Destination" button.
-
-4. Set a custom filename in the provided entry field.
-
-5. Click the "Merge" button to merge the selected PDF files.
+2. Follow the on-screen instructions to register and log in.
 
 ## Project Structure
 
 ```plaintext
-PDF-Merger/
+Authentication-System/
 ├── LICENSE
 ├── README.md
 ├── requirements.txt
-├── setup.py
 ├── .gitignore
 ├── src/
-    ├── __init__.py
-│   └── app.py
+│   ├── __init__.py
+│   ├── app.py
+    ├── authentication.py
+│   ├── face_recognition.py
+│   └── data/
+│       ├── __init__.py
+│       └── content.txt
 └── tests/
     ├── __init__.py
-    └── test_app.py
+    ├── test_app.py
+    ├── test_authentication.py
+    └── test_face_recognition.py
 ```
+
 - `src/`: Contains the main application code.
-    - `app.py`: Main GUI application.
+    - `app.py`: Module for the user interface.
+    - `authentication.py`: Module for login an register system
+    - `face_recognition.py`: Module for face recognition functionality.
+    - `data/`: Directory to store captured user faces and login information.
 - `tests/`: Contains test files.
     - `test_app.py`: Test cases for the application.
+    - `test_authentication.py`:
+    - `test_face_recognition.py`:
 
 ## License
 
