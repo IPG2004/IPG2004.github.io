@@ -1,29 +1,50 @@
+html {
+  scroll-behavior: smooth;
+  font-size: 1.3em;
+}
+
 body {
   font-family: "Courier New", Courier, monospace;
   margin: 0;
   background-color: #000;
   color: #fff;
   letter-spacing: 1px;
+  position: relative;
 }
 
 header {
+  position: fixed;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 30px;
+  border-spacing: 100px;
   background-color: #333;
-  font-size: 1.3em;
+  
+}
+
+h1 {
+  font-size: xx-large;
+}
+
+h2 {
+  font-size: x-large;
+}
+
+h3 {
+  font-size: large;
 }
 
 .logo {
-  font-size: 1.8em;
+  font-size: 1.8rem;
   color: #00FF00;
 }
 
 nav ul {
   list-style-type: none;
   margin: 0;
-  padding: 0;
+  padding: 1.8rem;
   display: flex;
 }
 
@@ -103,9 +124,15 @@ form {
   width: 80%;
   border: 2px;
   text-align: left;
+  border-radius: 5px;
 }
 
-.form_container label {
+.form_container #name, .form_container #email {
+  height: 16px;
+}
+
+.form_container #message {
+  height: 150px;
 }
 
 .form_container textarea {
@@ -117,33 +144,9 @@ form {
   text-align: left;
 }
 
-/* container_form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-} */
-
-/* form label{
-  margin: 40px 0px 20px 0px;
-  align-items:normal;
-  text-align: left;
-} */
-
-/* form textarea {
-  padding: 14px;
-  width: 60%;
-  border: 2px solid #333;
-  background-color: #222;
-  color: #fff
-} */
-
-/* form textarea {
-  height: 150px;
-} */
-
 form button {
   padding: 10px 20px;
-  border: none;
+  border-radius: 5px;
   background-color: #00FF00;
   color: #000;
   cursor: pointer;
