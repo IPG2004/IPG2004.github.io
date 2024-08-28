@@ -1,0 +1,181 @@
+/* Global Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    color: #fff;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+a {
+    color: #0f0;
+    text-decoration: none;
+}
+
+img {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+button {
+    border: none;
+    border-radius: 5px;
+    background-color: #0f0;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Authentication Container */
+.auth-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #000;
+}
+
+.auth-form {
+    background-color: #111;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    text-align: center;
+    box-sizing: border-box; /* Ensure padding is included in width */
+}
+
+.auth-form h2 {
+    margin-bottom: 20px;
+    color: #0f0;
+}
+
+.auth-form input {
+    width: calc(100% - 20px); /* Adjust width for equal padding */
+    padding: 10px;
+    margin: 5px 0; /* Added vertical margin */
+    border: none;
+    border-radius: 5px;
+    background-color: #222;
+    color: #0f0;
+    box-sizing: border-box; /* Ensure padding is included in width */
+}
+
+.auth-form button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #0f0;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 10px 0;
+}
+
+.auth-form p {
+    color: #fff;
+}
+
+/* Main Content */
+#main-content {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Top Bar */
+.top-bar {
+    background-color: #111;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #0f0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    font-size: large;
+}
+
+.top-bar-right {
+    display: flex;
+    gap: 30px;
+    align-items: center
+}
+
+
+.user-actions {
+    display: flex;
+    align-items: center;
+}
+
+.user-actions span {
+    margin-right: 20px;
+}
+
+/* Sidebar Toggle Button */
+#sidebar-toggle {
+    position: fixed;
+    top: 70px;
+    left: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+#sidebar-toggle img {
+    width: 30px;
+}
+
+/* Sidebar */
+.sidebar {
+    background-color: #000;
+    padding: 15px;
+    margin-top: 90px; /* Ajuste para que esté debajo de la barra superior */
+    position: fixed;
+    top: 0;
+    left: -220px; /* Oculto por defecto */
+    height: 100%;
+    overflow: hidden;
+    transition: left 0.5s ease;
+    width: auto;
+    z-index: 999;
+    border-right: none;
+}
+
+.sidebar.open {
+    left: 0; /* Desplegar la barra lateral */
+    border-right: 10px solid #0f0;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 10px;
+}
+
+.sidebar ul li a {
+    color: #0f0;
+    font-weight: bold;
+    padding: 5px;
+    display: block;
+}
+
+/* Content Area */
+.content-area {
+    flex-grow: 1;
+    padding: 20px;
+    margin-top: 80px; /* Ajuste para que el contenido esté debajo de la barra superior */
+    margin-left: 100px; /* Espacio para la barra lateral al estar oculta */
+}
+
+.subpage {
+    display: none;
+}
