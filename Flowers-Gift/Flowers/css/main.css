@@ -35,7 +35,7 @@ body {
   #lyrics {
       font-size: 14px; /* Reduce el tamaño del texto para dispositivos más pequeños */
       margin-bottom: 530px;
-      letter-spacing: 3px;
+      letter-spacing: 2px;
   }
 
 }
@@ -112,7 +112,7 @@ body {
 @media only screen and (max-width: 600px) {
   /* Estilos específicos para dispositivos con un ancho máximo de 600px */
 .flowers {
-      font-size: 14px;
+      font-size: 13px;
       margin-bottom: 35%;
       letter-spacing: 3px;
       transform: scale(1.0);
