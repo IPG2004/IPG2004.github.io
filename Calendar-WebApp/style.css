@@ -1,48 +1,98 @@
 /* styles.css */
 
-body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f0f0f0;
+body, html {
     margin: 0;
+    padding: 0;
+    height: 100%;
 }
 
 .calendar-container {
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    width: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Hace que el contenedor ocupe toda la altura de la pantalla */
+    width: 100vw; /* Hace que el contenedor ocupe todo el ancho de la pantalla */
+    background-color: #111; /* Color de fondo opcional */
+    box-sizing: border-box; /* Asegura que el padding y el borde se incluyan en el tamaño total */
 }
 
 .calendar-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 10px;
+    width: 100%; /* Hace que el encabezado ocupe todo el ancho del contenedor */
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #555; /* Color de fondo opcional para el encabezado */
 }
 
 .calendar-header h2 {
+    color: #fff;
     margin: 0;
+    flex-grow: 1; /* Permite que el título del mes y año ocupe el espacio restante */
+    text-align: center; /* Centra el texto del título */
 }
 
 .calendar {
-    width: 100%;
+    width: 100%; /* Hace que la tabla ocupe todo el ancho del contenedor */
+    height: calc(100% - 60px); /* Calcula la altura restante después de restar la altura del encabezado */
     border-collapse: collapse;
 }
 
 .calendar th, .calendar td {
-    text-align: center;
-    padding: 10px;
-    border: 1px solid #ddd;
+    border: 1px solid #555;
+    width: calc(100% / 7);
+    vertical-align: top;
+    position: relative; /* Necesario para posicionar elementos dentro de la celda */
 }
 
 .calendar th {
     background-color: #333;
     color: white;
+    height: 50px;
+}
+
+.calendar td {
+    cursor: pointer;
+    color: #fff;
+    padding: 8px;
+}
+
+.day-number {
+    position: absolute;
+    top: 8px; /* Ajuste para la esquina superior izquierda */
+    left: 8px; /* Ajuste para la esquina superior izquierda */
+}
+
+.label-container {
+    position: relative;
+    padding: 20px 30px 0px 15px;
+    text-align: center;
+    bottom: 0px;
+}
+
+.label {
+    display: flex;
+    width: 100%;
+    padding: 5px 10px;
+    border-radius: 12px; /* Borde circular */
+    color: black; /* Color del texto */
+    background-color: blue; /* Color de fondo por defecto */
+    margin: 5px; /* Espacio entre labels */
+    font-size: 20px;
+}
+
+.label-yellow {
+    background-color: yellow; /* Color de fondo para Tarea2 */
+}
+
+.label-red {
+    background-color: red; /* Color de fondo para Tarea3 */
+}
+
+.label-green {
+    background-color: green; /* Color de fondo para Tarea4 */
 }
 
 button {
@@ -57,3 +107,4 @@ button {
 button:hover {
     background-color: #555;
 }
+
