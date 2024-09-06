@@ -14,7 +14,7 @@ document.querySelector('.login__form').addEventListener('submit', function(event
 
    // Verify the values
    if (name === correctName && nickname === correctNickname && date === correctDate) {
-       window.location.href = '../Flowers/main.html'; // Redirects to main.html
+       window.location.href = '../Carrousel-Photostudio/index.html'; // Redirects to main.html
    } else {
        alert('Datos incorrectos, abortando');
        document.getElementById('login-name').value = '';
