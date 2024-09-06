@@ -240,3 +240,30 @@ body {
 .p {
   background-image: url(images/img16.jpg);
 }
+
+@media (max-width: 600px) {
+  .title h1 {
+    font-size: 50px;
+  }
+  .holder {
+    width: 400px;
+    /* height: 100px; */
+  }
+
+  .panel {
+    /* width: 50px; */
+    /* height: 50px; */
+  }
+
+  .pagination {
+    width: 300px;
+    margin-left: 10%;
+  }
+
+  .pagination button {
+    width: 30px;
+    height: 30px;
+    font-size: 15px;
+
+  }
+}
