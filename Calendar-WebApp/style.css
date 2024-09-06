@@ -78,7 +78,7 @@ body, html {
     padding: 5px 10px;
     border-radius: 12px; /* Borde circular */
     color: black; /* Color del texto */
-    background-color: blue; /* Color de fondo por defecto */
+    background-color: green; /* Color de fondo por defecto */
     margin: 5px; /* Espacio entre labels */
     font-size: 20px;
 }
@@ -92,7 +92,7 @@ body, html {
 }
 
 .label-green {
-    background-color: green; /* Color de fondo para Tarea4 */
+    background-color: blue; /* Color de fondo para Tarea4 */
 }
 
 button {
