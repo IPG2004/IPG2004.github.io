@@ -1,0 +1,147 @@
+%PDF-1.3
+%·¾­ª
+1 0 obj
+<<
+/Type /Catalog
+/Pages 2 0 R
+>>
+endobj
+2 0 obj
+<<
+/Type /Pages
+/Kids [ 5 0 R ]
+/Count 1
+>>
+endobj
+3 0 obj
+<<
+/Producer (Haru Free PDF Library 2.3.0)
+>>
+endobj
+4 0 obj
+<<
+/Type /Font
+/BaseFont /Helvetica
+/Subtype /Type1
+/Encoding /StandardEncoding
+>>
+endobj
+5 0 obj
+<<
+/Type /Page
+/MediaBox [ 0 0 595.276 841.89001 ]
+/Contents 6 0 R
+/Resources <<
+/ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+/Font <<
+/F1 4 0 R
+>>
+>>
+/Parent 2 0 R
+>>
+endobj
+6 0 obj
+<<
+/Length 7 0 R
+>>
+stream
+BT
+/F1 20 Tf
+200 800 Td
+(Invoice) Tj
+ET
+BT
+/F1 12 Tf
+50 750 Td
+(Client: John Doe) Tj
+ET
+BT
+/F1 12 Tf
+50 700 Td
+(Product) Tj
+ET
+BT
+/F1 12 Tf
+250 700 Td
+(Price) Tj
+ET
+BT
+/F1 12 Tf
+350 700 Td
+(Quantity) Tj
+ET
+BT
+/F1 10 Tf
+50 680 Td
+(Product 1) Tj
+ET
+BT
+/F1 10 Tf
+250 680 Td
+(19.99) Tj
+ET
+BT
+/F1 10 Tf
+350 680 Td
+(2) Tj
+ET
+BT
+/F1 10 Tf
+50 660 Td
+(Product 2) Tj
+ET
+BT
+/F1 10 Tf
+250 660 Td
+(5.49) Tj
+ET
+BT
+/F1 10 Tf
+350 660 Td
+(5) Tj
+ET
+BT
+/F1 10 Tf
+50 640 Td
+(Product 3) Tj
+ET
+BT
+/F1 10 Tf
+250 640 Td
+(7.99) Tj
+ET
+BT
+/F1 10 Tf
+350 640 Td
+(1) Tj
+ET
+BT
+/F1 12 Tf
+50 600 Td
+(Total: $75.420000) Tj
+ET
+
+endstream
+endobj
+7 0 obj
+592
+endobj
+xref
+0 8
+0000000000 65535 f
+0000000015 00000 n
+0000000064 00000 n
+0000000123 00000 n
+0000000184 00000 n
+0000000282 00000 n
+0000000468 00000 n
+0000001114 00000 n
+trailer
+<<
+/Root 1 0 R
+/Info 3 0 R
+/Size 8
+>>
+startxref
+1133
+%%EOF

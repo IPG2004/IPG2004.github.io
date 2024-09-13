@@ -40,7 +40,7 @@ body {
 
 }
 .titulo {
-  margin-bottom: 100px;
+  margin-bottom: 750px;
   font-family: "Arial Narrow", Arial, sans-serif;
   color: yellow;
   position: absolute;
@@ -50,6 +50,30 @@ body {
   animation: fadeIn 3s ease-in-out forwards;
   text-align: center;
 }
+
+.fondo {
+  margin-bottom: 50px;
+  font-family: "Arial Narrow", Arial, sans-serif;
+  color: yellow;
+  position: absolute;
+  font-weight: bold;
+  letter-spacing: 10px;
+  opacity: 0;
+  animation: fadeIn 3s ease-in-out forwards;
+  text-align: center;
+}
+
+/* .fondo {
+  margin-bottom: 100px;
+  font-family: "Arial Narrow", Arial, sans-serif;
+  color: yellow;
+  position: absolute;
+  font-weight: bold;
+  letter-spacing: 10px;
+  opacity: 0;
+  animation: fadeIn 3s ease-in-out forwards;
+  text-align: center;
+} */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -104,16 +128,16 @@ body {
 
 .flowers {
   position: relative;
-  transform: scale(0.9);
-  /*margin-bottom: 100px;
-  */
+  transform: scale(0.75);
+  margin-bottom: 100px;
+ 
 }
 
 @media only screen and (max-width: 600px) {
   /* Estilos específicos para dispositivos con un ancho máximo de 600px */
 .flowers {
       font-size: 13px;
-      margin-bottom: 35%;
+      margin-bottom: 55%;
       letter-spacing: 3px;
       transform: scale(1.0);
 }
