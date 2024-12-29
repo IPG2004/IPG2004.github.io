@@ -1,0 +1,113 @@
+/* Estilos generales */
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff; /* Fondo blanco */
+  height: 100vh;
+  font-family: 'Shadows Into Light', cursive; /* Fuente escrita a mano */
+  background-attachment: fixed;
+}
+
+/* Contenedor principal */
+.note-container {
+  /* position: relative; */
+  width: 100%;
+  height: 100%;
+  background-size: cover; /* Ajusta la imagen para cubrir todo el contenedor */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Agrega una ligera sombra */
+  border-radius: 8px; /* Opcional: bordes redondeados */
+}
+
+/* Texto del dia */
+.note-day {
+  position: absolute;
+  top: 30%;
+  right: 21%;
+  width: 50%;
+  font-size: 1.7rem;
+  color: #333;
+  text-align: center;
+  font-weight: bold;
+  line-height: 1.4;
+  word-wrap: break-word;
+}
+
+/* Texto de la nota */
+.note-text {
+  position: absolute;
+  top: 40%;
+  right: 21%;
+  width: 50%;
+  font-size: 1.4rem;
+  color: #333;
+  text-align: center;
+  line-height: 1.75;
+  word-wrap: break-word; /* Asegura que el texto no se salga del contenedor */
+}
+
+.note-image {
+  width: 100%;
+  height: 100%;
+}
+
+.note-date {
+  position: absolute;
+  top: 5%;
+  right: -10%;
+  width: 90%;
+  font-size: 1.4rem;
+  color: #333;
+  text-align: center;
+  line-height: 1.75;
+  word-wrap: break-word;
+}
+
+input[type="date"] {
+  appearance: none;
+  -webkit-appearance: none;
+  padding: 10px 15px;
+  font-size: 1rem;
+  font-family: 'Shadows Into Light', cursive;
+  border: 2px solid #333;
+  border-radius: 8px;
+  background-color: #eaeaea;
+  color: #333;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  outline: none;
+  cursor: pointer;
+  text-align: center;
+}
+
+
+/* Estilo para los botones de navegación */
+.nav-button {
+  background-color: #eaeaea;
+  border: 2px solid #333;
+  color: #333;
+  font-size: 1.1rem;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  margin: 0 6px;
+}
+
+.nav-button:hover {
+  background-color: #e6e6e6;
+  transform: scale(1.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.nav-button:disabled {
+  background-color: #ccc;
+  border: 2px solid #aaa;
+  color: #888;
+  cursor: not-allowed;
+}
+
+.nav-button:active {
+  transform: scale(0.9);
+}
