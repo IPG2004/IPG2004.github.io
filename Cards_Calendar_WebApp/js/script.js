@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const prevButton = document.getElementById('prev-btn');
   const nextButton = document.getElementById('next-btn');
 
-  const minDate = "2024-01-01"; // Fecha mínima
+  const minDate = "2025-01-01"; // Fecha mínima
   const today = new Date().toISOString().split('T')[0]; // Fecha máxima (hoy)
   dateInput.value = today;
   dateInput.setAttribute('min', minDate);
