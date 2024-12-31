@@ -25,8 +25,8 @@ body {
 .note-day {
   position: absolute;
   top: 30%;
-  right: 21%;
-  width: 50%;
+  right: 23%;
+  width: 47%;
   font-size: 1.7rem;
   color: #333;
   text-align: center;
@@ -38,7 +38,7 @@ body {
 /* Texto de la nota */
 .note-text {
   position: absolute;
-  top: 40%;
+  top: 45%;
   right: 21%;
   width: 50%;
   font-size: 1.4rem;
@@ -56,8 +56,8 @@ body {
 .note-date {
   position: absolute;
   top: 5%;
-  right: -10%;
-  width: 90%;
+  right: 0%;
+  width: 87%;
   font-size: 1.4rem;
   color: #333;
   text-align: center;
@@ -87,12 +87,12 @@ input[type="date"] {
   background-color: #eaeaea;
   border: 2px solid #333;
   color: #333;
-  font-size: 1.1rem;
+  font-size: 1rem;
   padding: 10px 15px;
   border-radius: 8px;
   cursor: pointer;
   transition: transform 0.2s, box-shadow 0.2s;
-  margin: 0 6px;
+  margin: 0 10px;
 }
 
 .nav-button:hover {
