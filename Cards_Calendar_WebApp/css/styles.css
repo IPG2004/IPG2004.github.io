@@ -24,7 +24,7 @@ body {
 /* Texto del dia */
 .note-day {
   position: absolute;
-  top: 30%;
+  top: 32%;
   right: 23%;
   width: 47%;
   font-size: 1.7rem;
@@ -38,7 +38,7 @@ body {
 /* Texto de la nota */
 .note-text {
   position: absolute;
-  top: 45%;
+  top: 49%;
   right: 21%;
   width: 50%;
   font-size: 1.4rem;
@@ -79,6 +79,7 @@ input[type="date"] {
   outline: none;
   cursor: pointer;
   text-align: center;
+  width: 100px;
 }
 
 
