@@ -7,9 +7,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const minDate = "2025-01-01"; // Fecha mínima
   const today = new Date().toISOString().split('T')[0]; // Fecha máxima (hoy)
+  const maxDate = "2025-12-31";
   dateInput.value = today;
   dateInput.setAttribute('min', minDate);
-  dateInput.setAttribute('max', today);
+  dateInput.setAttribute('max', maxDate);
 
   // Función para actualizar nota
   const actualizarNota = (fecha) => {
@@ -27,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // Habilitar/deshabilitar botones según el rango de fechas
       prevButton.disabled = fecha === minDate;
-      nextButton.disabled = fecha === today;
+      nextButton.disabled = fecha === maxDate;
   };
 
   // Cargar frase del día actual
